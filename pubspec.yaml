@@ -1,13 +1,20 @@
-name: lastwar_ai
+name: Build APK
 
-description: LastWar AI
+on:
+  push:
+    branches: [ main ]
 
-environment:
-  sdk: ">=3.0.0 <4.0.0"
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-dependencies:
-  flutter:
-    sdk: flutter
+    steps:
+      - uses: actions/checkout@v3
 
-flutter:
-  uses-material-design: true
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.19.0'
+
+      - run: flutter pub get
+
+      - run: flutter build apk --release
