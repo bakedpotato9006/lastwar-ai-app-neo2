@@ -36,6 +36,4 @@ jobs:
 
       - name: Build APK (verbose)
         run: flutter build apk --release -v
-
- environment:
-  sdk: '>=3.3.0 <4.0.0'
+        
