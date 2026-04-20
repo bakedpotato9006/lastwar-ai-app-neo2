@@ -29,9 +29,13 @@ jobs:
 
       - name: Clean
         run: flutter clean
-
+  
       - name: Pub get
         run: flutter pub get
+        
 
       - name: Build APK (verbose)
         run: flutter build apk --release -v
+
+ environment:
+  sdk: '>=3.3.0 <4.0.0'
